@@ -1,0 +1,43 @@
+{
+  "name": "adaptive-chunker",
+  "version": "1.0.0",
+  "description": "Smart text chunking for use in RAG systems",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "adaptive-chunker": "dist/cli.js"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node src/index.ts",
+    "cli": "ts-node src/cli.ts",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run clean && npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "text-chunking",
+    "rag",
+    "nlp",
+    "typescript",
+    "text-processing"
+  ],
+  "author": "Ezra Apple - ezrapple.engineer@gmail.com",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.41.0",
+    "@typescript-eslint/parser": "^8.41.0",
+    "eslint": "^9.34.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
