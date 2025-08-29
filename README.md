@@ -127,3 +127,33 @@ for await (const chunk of streamChunkText(text, { maxTokens: 200 }, fixedStrateg
 - All strategies preserve original formatting (including newlines) as much as possible.
 - `allowFallback` controls whether oversized blocks are further split using the next fallback layer.
 - Types are included; import `ChunkingOptions`, `ChunkingStrategy`, and `Tokenizer` from the package if needed.
+
+### Releasing updates & versioning
+
+Use semantic versioning: patch for fixes, minor for features, major for breaking changes.
+
+1) Update version
+
+```bash
+# choose one
+npm version patch   # 1.0.1
+npm version minor   # 1.1.0
+npm version major   # 2.0.0
+```
+
+2) Publish (build runs automatically via prepublishOnly)
+
+```bash
+npm publish --access public
+# If you have 2FA enabled:
+npm publish --access public --otp <code>
+```
+
+Tips:
+- Validate contents before publishing:
+```bash
+npm publish --dry-run
+npm pack
+```
+- CLI entry is `adaptive-chunker` (from `bin`).
+- Only `dist/**`, `README.md`, `LICENSE`, and `package.json` are shipped.
