@@ -3,11 +3,10 @@
  * Exports main chunking functions and strategies for use by consumers.
  */
 export { chunkText, streamChunkText } from "./chunk";
-export { fixedStrategy } from "./core/strategies/fixed";
-export { sentenceStrategy } from "./core/strategies/sentence";
+export { fixedStrategy, sentenceStrategy, paragraphStrategy, lineStrategy } from "./core/strategies/fallbacks";
+export { markdownStrategy, codeStrategy, htmlStrategy, dialogueStrategy, latexStrategy, plainTextStrategy, logsStrategy, emailStrategy } from "./core/strategies/doc-type";
 export type {
   ChunkingOptions,
   ChunkingStrategy,
-  ChunkingStream,
-  TokenizerFn,
+  Tokenizer,
 } from "./core/types";
